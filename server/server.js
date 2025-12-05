@@ -12,14 +12,10 @@ const app = express();
 // Connect Database
 await connectDB();
 
-// --- WICHTIGE ÄNDERUNG: CORS KONFIGURATION ---
-const allowedOrigins = [
-  "https://car-rental-frontend-sigma-eight.vercel.app/",
-  "http://localhost:5173"
-];
 
+// CORS 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: true,
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
 }));
